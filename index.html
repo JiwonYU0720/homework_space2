@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>homework</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+
+    <style type="text/css">
+        #star{width:20px ;position: absolute; left: -200px; top: -200px}
+        body,nav,section{margin: 0; padding: 0 ;text-align: center; font-family: 'Gowun Batang', serif; background: black;}
+        .j{width: 300px; height: auto; position: absolute; left:8vw; top: 60vh}
+        .E{width: 300px; height: auto; position: absolute; right:5vw ; top: 10vh}
+        .S{width: 300px; height: auto; position: absolute; left:4vw; top: 10vh}
+        .station{width: 250px; height: auto; position: absolute; left:30vw; top:80vh}
+        .gal{width: 300px; height: auto; position: absolute; right: 22vw; top: 3vh}
+        .groot{width: 200px; height: auto; position: absolute; right: 3vw; top: 60vh}
+        .V{width: 200px; height: auto; position: absolute; left: 25vw ; top: 5vh}
+        .ment{padding-top: 350px; font-size: 2rem; color: white;text-shadow: 0px 0px 10px gold;}
+        .ment2{ font-size: 1.5rem; color: pink;text-shadow: 0px 0px 10px pink;}
+        .milk{width: 500px; height: auto; position: absolute; right: 20vw; top: 65vh}
+        .hole{width: 300px; height: auto; position: absolute; right: 40vw; top: 5vh}
+        #floatingImage {
+        position: absolute;
+        top: 0;
+        left: 0;width: 200px}
+    </style>
+</head>
+<body>
+    <img src="star.png" id="star">
+    <script type="text/javascript">
+        var t = setInterval(makeStar, 1000);
+
+        function makeStar(){
+    let x = Math.random()*(window.innerWidth - 100);
+    let y = Math.random()*(window.innerHeight - 106);
+    let d = document.getElementById("star");
+    let a = d.cloneNode(true);
+    a.style.left = x + "px";
+    a.style.top = y + "px";
+    document.body.appendChild(a);
+    console.log(x,y);}
+</script>
+    <img class="station" src="station.png">
+    <img class="gal" src="gal.png">
+    <img class="groot" src="groot.png">
+
+    <a href="story1.html" >
+            <img class="j" src="j.png"></a>
+
+    <a href="story2.html" >
+            <img class="S" src="S.png"></a>
+
+    <a href="story3.html" >
+            <img class="E" src="E.png"></a>
+
+    <a href="story4.html" >
+            <img class="V" src="V.png"></a>
+
+        <div class="ment">
+        <h2>우주 속에 행성들을 클릭해보세요!<br>
+        혹시 모르죠... 새로운 세상이 펼쳐질지도?</h2></div>
+        <div class="ment2">
+        <h3>주의! 행.성.만 클릭이 가능해요!</h3>
+    <img class="milk" src="milk.png">
+    <img class="hole" src="hole.png">
+    </div>
+
+    <div class="floating-image">
+        <img id="floatingImage" src="A.png" alt="Floating Image"></div>
+    <script type="text/javascript">
+        const floatingImage = document.getElementById("floatingImage");
+
+function randomPosition() {
+    const maxX = window.innerWidth - floatingImage.clientWidth;
+    const maxY = window.innerHeight - floatingImage.clientHeight;
+
+    const randomX = Math.random() * maxX;
+    const randomY = Math.random() * maxY;
+
+    return { x: randomX, y: randomY };
+}
+
+function moveImage() {
+    const position = randomPosition();
+    floatingImage.style.left = position.x + "px";
+    floatingImage.style.top = position.y + "px";
+}
+
+// 이미지를 2초마다 새 위치로 이동합니다.
+setInterval(moveImage, 2000);
+</script>
+</body>
+</html>

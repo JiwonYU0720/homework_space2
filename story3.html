@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>earth</title>
+	<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+	<style type="text/css">
+		 body,nav,section{margin: 0; padding: 0 ;text-align: center; font-family: 'Gowun Batang', serif; background: #161F30;}
+		 h1{padding-top: 100px; color: white;}
+		 h2{padding-top: 50px; color: white;}
+		 .click{width: auto; padding-top: 180px;height: 80px; }
+		 h3{ padding: 10px; color: gold }
+
+		#floatingImage {
+	    position: absolute;
+	    top: 0;
+	    left: 0;width: 200px}
+
+	    
+		</style>
+</head>
+<body>
+	<audio src="earth.mp3" id="earth"></audio>
+    <button id="but">START</button>
+    <button id="st">STOP</button>
+    <input type="range" id="vol" max="1" min="0" step="0.01">
+    <script type="text/javascript">
+but.onclick = function(){earth.play();}
+st.onclick = function(){earth.pause();}
+vol.oninput = function(){earth.volume = vol.value;}</script>
+
+	<h1>이곳은 지구, 생명체가 살아 숨쉬는 곳.</h1>
+	<h2>지구Earth는 태양으로부터 세 번째 행성이다.<br>45억 6700만 년 전 형성되었으며,<br>용암 활동이 활발했던 지구와 행성 테이아의 격렬한 충돌로 생성되었을 달을 위성으로 둔다.<br>지구의 중력은 우주의 다른 물체, 특히 태양과 지구의 유일한 자연위성인 달과 상호작용한다.<br> 지구와 달 사이의 중력 작용으로 조석 현상이 발생한다.<br><br>지금은 생명체들이 살아 숨쉬는 곳이지만,<br>미래는 아무도 모른다.</h2>
+	
+	<div class="floating-image">
+        <img id="floatingImage" src="moon.png" alt="Floating Image">
+
+    </div>
+    <script type="text/javascript">
+    	const floatingImage = document.getElementById("floatingImage");
+
+function randomPosition() {
+    const maxX = window.innerWidth - floatingImage.clientWidth;
+    const maxY = window.innerHeight - floatingImage.clientHeight;
+
+    const randomX = Math.random() * maxX;
+    const randomY = Math.random() * maxY;
+
+    return { x: randomX, y: randomY };
+}
+
+function moveImage() {
+    const position = randomPosition();
+    floatingImage.style.left = position.x + "px";
+    floatingImage.style.top = position.y + "px";
+}
+
+// 이미지를 2초마다 새 위치로 이동합니다.
+setInterval(moveImage, 2000);
+</script>
+
+	<a href="index.html" >
+		<img class="click" src="click.png"></a>
+		<h3>우주로 돌아가려면 로켓으로 돌아가세요</h2>
+
+
+
+</body>
+</html>
